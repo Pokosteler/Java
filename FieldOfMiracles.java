@@ -1,12 +1,20 @@
 import java.io.*;
+
 class GameFieldOfMiracles {
-    String word;
+    private String word;
+
+    GameFieldOfMiracles() {
+        play();
+    }
+
     public void setWord(String word) {
         this.word = word;
     }
+
     public String getWord() {
         return word;
     }
+
     private String getKey() {
         String direction = "";
         try {
@@ -18,7 +26,8 @@ class GameFieldOfMiracles {
         }
         return direction;
     }
-    void play() {
+
+    private void play() {
         setWord("wordwordword");
         String changeableWord = getWord();
         int count = 0;
@@ -36,7 +45,7 @@ class GameFieldOfMiracles {
                 if (getWord().contains(inputString)) {
                     int i = -1;
                     while (i < getWord().length() - 1) {
-                        String c = getWord().substring(i+1,i+2);
+                        String c = getWord().substring(i + 1, i + 2);
                         if (c.equals(inputString)) {
                             changeableArray[i + 1] =
                                     changeableArray[i + 1].replaceAll
@@ -52,8 +61,7 @@ class GameFieldOfMiracles {
                     if (!changeableWord.equals(getWord())) {
                         changeableWord = "";
                     }
-                }
-                else {
+                } else {
                     count++;
                     System.out.println("Trail " + count + ": Try again");
                 }
@@ -68,9 +76,9 @@ class GameFieldOfMiracles {
         System.out.println("You got in " + count + " trials");
     }
 }
+
 public class FieldOfMiracles {
     public static void main(String[] args) {
-        GameFieldOfMiracles g = new GameFieldOfMiracles();
-        g.play();
+        new GameFieldOfMiracles();
     }
 }
