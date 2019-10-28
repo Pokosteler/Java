@@ -1,5 +1,38 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 class Variable {
-    int count;
+    private int count;
+    Variable() {
+        System.out.println("Enter decimal number: ");
+        fromDecimalToBinaryTranslation(getKey());
+        System.out.println("Enter binary number: ");
+        fromBinaryToDecimalTranslation(getKey());
+        System.out.println("Enter octal number: ");
+        fromOctalToDecimal(getKey());
+        System.out.println("Enter decimal number: ");
+        fromDecimalToOctal(getKey());
+    }
+    void setCount(int count) {
+        this.count = count;
+    }
+
+    int getCount() {
+        return count;
+    }
+
+    private int getKey() {
+        int direction = 0;
+        try {
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(System.in));
+            direction = Integer.parseInt(br.readLine());
+        } catch (IOException ex) {
+            System.out.println("Input Error!");
+        }
+        return direction;
+    }
 
     void fromDecimalToBinaryTranslation(int v) { // convert decimal to binary
         int oldVariable = v;
@@ -80,14 +113,6 @@ class Variable {
 
 public class NumberTranslation {
     public static void main(String[] args) {
-        Variable v = new Variable();
-        int decimalVariable = 31243;
-        int binaryVariable = 11101000;
-        int octalVariable = 75013;
-        System.out.println(Integer.toBinaryString(decimalVariable));
-        v.fromDecimalToBinaryTranslation(decimalVariable);
-        v.fromBinaryToDecimalTranslation(binaryVariable);
-        v.fromOctalToDecimal(octalVariable);
-        v.fromDecimalToOctal(decimalVariable);
+        new Variable();
     }
 }
