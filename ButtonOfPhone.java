@@ -1,4 +1,7 @@
 class Phone {
+    Phone() {
+       System.out.println(TypeSMS("abcdefghijklmnopqrstuvwxyz")); 
+    }
     private char[] digits = {'1', '2', '3',
             '4', '5', '6',
             '7', '8', '9',
@@ -19,7 +22,7 @@ class Phone {
     public String[] getLetters() {
         return letters;
     }
-    String TypeSMS(String s) {
+    private String TypeSMS(String s) {
         String setOfButtons = "";
         if (s != "") {
             for (int i = 0; i < s.length(); i++) {
@@ -76,7 +79,6 @@ class Phone {
 }
 public class ButtonOfPhone {
     public static void main(String[] args) {
-        Phone p = new Phone();
-        System.out.println(p.TypeSMS("abcdefghijklmnopqrstuvwxyz"));
+        new Phone();
     }
 }
