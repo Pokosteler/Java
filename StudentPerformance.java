@@ -54,6 +54,10 @@ class Diagram {
                 + "(70-79)(80-89)(90-100)");
     }
 }
+DataOfStudents() {
+    System.out.print("Amount of students: ");
+    enterMarks();
+}
 class DataOfStudents extends Diagram {
     Scanner s = new Scanner(System.in);
     int amount = s.nextInt();
@@ -80,8 +84,6 @@ class DataOfStudents extends Diagram {
 }
 public class StudentPerformance {
     public static void main(String[] args) {
-        System.out.print("Amount of students: ");
-        DataOfStudents s = new DataOfStudents();
-        s.enterMarks();
+        new DataOfStudents();
     }
 }
