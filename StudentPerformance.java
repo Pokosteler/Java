@@ -1,6 +1,8 @@
 import java.util.*;
+
 class Diagram {
     int counters[] = new int[10];
+
     void print(int marks[]) {
         for (int i = 0; i < marks.length; i++) {
             if (marks[i] >= 0 && marks[i] < 10) {
@@ -54,16 +56,19 @@ class Diagram {
                 + "(70-79)(80-89)(90-100)");
     }
 }
+
 class DataOfStudents extends Diagram {
     DataOfStudents() {
         enterMarks();
     }
+
     Scanner s = new Scanner(System.in);
     int amount = s.nextInt();
     int marks[] = new int[amount];
+
     void enterMarks() {
         for (int i = 0; i < marks.length; i++) {
-            System.out.print(i+1 + " student grade: ");
+            System.out.print(i + 1 + " student grade: ");
             try {
                 marks[i] = s.nextInt();
                 if (marks[i] < 0 || marks[i] > 100) {
@@ -71,8 +76,7 @@ class DataOfStudents extends Diagram {
                     i--;
                     System.out.println("Input Error! Try again!");
                 }
-            }
-            catch (InputMismatchException ex) {
+            } catch (InputMismatchException ex) {
                 s.nextLine();
                 i--;
                 System.out.println("Input Error! Try again!");
@@ -81,6 +85,7 @@ class DataOfStudents extends Diagram {
         print(marks);
     }
 }
+
 public class StudentPerformance {
     public static void main(String[] args) {
         System.out.print("Amount of students: ");
