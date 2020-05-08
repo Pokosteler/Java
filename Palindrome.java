@@ -1,3 +1,8 @@
+/*
+* @author Nataliya Kozlova
+* @version 1.0 
+*/
+
 import java.io.*;
 class Word {
     Word() {
