@@ -1,3 +1,8 @@
+/*
+* @author Nataliya Kozlova
+* @version 1.0 
+*/
+
 class Cell {
     private int color; // 0 - white, 1 - black
     Cell(int c) {
