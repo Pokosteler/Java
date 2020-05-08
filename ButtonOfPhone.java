@@ -1,3 +1,8 @@
+/*
+* @author Nataliya Kozlova
+* @version 1.0 
+*/
+
 class Phone {
     Phone() {
        System.out.println(TypeSMS("abcdefghijklmnopqrstuvwxyz")); 
